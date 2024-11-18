@@ -38,15 +38,22 @@ namespace DBMS.SQL_QueryData
         private void Form1_Load(object sender, EventArgs e)
         {
             connect();
+            showData();
+           // string sql = "select * from Products";
+           // da = new SqlDataAdapter(sql,conn);
+           //DataSet ds = new DataSet();
+           // da.Fill(ds);
+           // dataGridView1.DataSource = ds.Tables[0];
+
+           
+        }
+        private void showData()
+        {
             string sql = "select * from Products";
-            da = new SqlDataAdapter(sql,conn);
+            da = new SqlDataAdapter(sql, conn);
             DataSet ds = new DataSet();
             da.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
-
-           
-           
-
         }
     }
 }
